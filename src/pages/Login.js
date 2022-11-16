@@ -34,7 +34,7 @@ export default function Login(){
     }
  
     return (
-        <>
+        <div className='login-bg'>
         <div className='log-box'>
             <div className='log1'>
                 <Link className='lr login' to='/login'>Login</Link>
@@ -53,6 +53,6 @@ export default function Login(){
                 <input type='submit' value='Login' className='log-sub'/>
             </form>
         </div>
-        </>
+        </div>
     )
 }

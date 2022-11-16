@@ -28,7 +28,7 @@ export default function Editprofile() {
         fileReader.onload = () => {
             const fileURL = fileReader.result
             const config = { headers: { "content-type": 'application/json' }, }
-            axios.post('http://localhost:8000/edit-profile', {
+            axios.post('https://safe-stray-life.herokuapp.com/edit-profile', {
                 name: data.name,
                 email: data.email,
                 address: data.address,

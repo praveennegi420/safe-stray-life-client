@@ -1,6 +1,6 @@
 export default function Stray(props){
     return(
-        <div className="stray-box">
+        <div className="stray-box" onClick={()=>{props.postClick(props.id)}}>
             <img className="stray-img" src={props.imgsrc}
                 alt="stray-photo" />
             <div className="about-stray">

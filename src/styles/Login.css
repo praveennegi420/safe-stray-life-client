@@ -1,15 +1,26 @@
+
+.login-bg{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.4)), url("https://images.pexels.com/photos/10094979/pexels-photo-10094979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+   /* background-image: url("https://images.pexels.com/photos/10094979/pexels-photo-10094979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); */
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
 .log-box{
-    background-color: rgb(140, 139, 139);
+    background-color: transparent;
     width: 400px; height: 400px; margin: auto auto;
     margin-top:8em; margin-bottom: 10em;
     border-radius: 20px;
 }
 
 .log1{
-    padding-top: 4em; padding-bottom: 40px;
+    padding-top: 1em; padding-bottom: 40px;
 }
 .login:active{
-    background-color: aliceblue;
+    background-color: rgb(13, 119, 212);
 }
 .lr{
     padding: 5px 20px; text-decoration: none; font-size: 1em; 
@@ -19,9 +30,10 @@
 
 
 .log-form{
-    background-color: rgba(161, 148, 154, 0.674); width: 100%;
+    background-color: rgba(0, 0, 0, 0.067); width: 100%;
     padding: 0px; color: aliceblue; position: relative;
     margin: auto auto; margin-top: 10px;
+    border-radius: 10px;
 }
 
 .reg-form{

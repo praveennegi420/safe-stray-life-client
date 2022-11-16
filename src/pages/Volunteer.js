@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 import Volunteers from '../components/Volunteers'
+import { useNavigate } from 'react-router-dom'
 
 export default function Volunteer() {
 
     const [display, setDisplay] = useState([])
     const [page, setPage] = useState(1)
+    const navigate= useNavigate()
 
     const fetchData = async () => {
         try {
-            const data = await axios.get('http://localhost:8000/volunteer', {
+            const data = await axios.get('https://safe-stray-life.herokuapp.com/volunteer', {
                 params: { page }
             });
             return data.data;
@@ -33,9 +35,16 @@ export default function Volunteer() {
         setPage(prev => display.length === 0 ? prev : prev + 1)
     }
 
+    const openPost = (id) =>{
+        console.log('clicked')
+        axios.post(`http://localhost:8000/volunteer/${id}`,{token: localStorage.getItem('token')})
+        .then(res => navigate('/person', {state:{data:res.data.post, user:''}}))
+        .catch(err => console.log(err))
+    }
+
     let id = 0
     const displayData = display.map(datauni => {
-        return <Volunteers key={id++} imgsrc={datauni.avatar.url} name={datauni.name} contact={datauni.contact} />
+        return <Volunteers  key={id++} id={datauni._id} imgsrc={datauni.avatar.url} name={datauni.name} contact={datauni.contact} postClick={openPost}/>
     });
 
     return (

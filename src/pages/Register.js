@@ -27,7 +27,7 @@ export default function Contact() {
     }
 
     return (
-        <>
+        <div className='login-bg'>
             <div className='log-box'>
                 <div className='log1 reg1'>
                     <Link className='lr login' to='/login'>Login</Link>
@@ -51,6 +51,6 @@ export default function Contact() {
                 </form>
 
             </div>
-        </>
+        </div>
     )
 }

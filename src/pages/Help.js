@@ -2,16 +2,18 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import Stray from "../components/Stray"
 import '../styles/Help.css'
+import { useNavigate } from 'react-router-dom'
 
 export default function Help() {
     const dataContent = { location: '', contact: '', about: '', image: { name: '', file: null } }
     const [display, setDisplay] = useState([])
     const [data, setData] = useState(dataContent) 
     const [page, setPage] = useState(1)
+    const navigate= useNavigate()
 
     const fetchData = async () => {
         try {
-            const data = await axios.get('http://localhost:8000/help', {
+            const data = await axios.get('https://safe-stray-life.herokuapp.com/help', {
                 params: {
                     page
                 }
@@ -47,7 +49,7 @@ export default function Help() {
         fileReader.onload= () => {
             const fileURL= fileReader.result
             const config = { headers: { "content-type": 'application/json' } }
-            axios.post('http://localhost:8000/help', {
+            axios.post('https://safe-stray-life.herokuapp.com/help', {
                 location: data.location,
                 contact: data.contact,
                 about: data.about,
@@ -75,8 +77,16 @@ export default function Help() {
         setPage(prev => display.length===0 ? prev : prev + 1)
     }
 
+    const openPost = (id) =>{
+        console.log('clicked')
+        axios.post(`http://localhost:8000/post/${id}`,{token: localStorage.getItem('token')})
+        .then(res => navigate('/post', {state:{data:res.data.post, user:''}}))
+        .catch(err => console.log(err))
+    }
+
+
     const displayData = display.map(datauni => {
-        return <Stray key={datauni._id} id={datauni._id} imgsrc={datauni.img.url} location={datauni.location} contact={datauni.contact} name={display.name} />
+        return <Stray key={datauni._id} id={datauni._id} imgsrc={datauni.img.url} location={datauni.location} contact={datauni.contact} name={display.name} postClick={openPost}/>
     });
 
     return (
