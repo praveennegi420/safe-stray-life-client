@@ -18,7 +18,7 @@ export default function Contact() {
     async function login(e) {
         e.preventDefault();
 
-        axios.post('http://localhost:8000/register', { user: data.userName, email: data.email, passwd: data.passwd })
+        axios.post('https://safe-stray-life.herokuapp.com/register', { user: data.userName, email: data.email, passwd: data.passwd })
             .then(res => {
                 if (res.data.status === 'error') alert(res.data.error)
                 else navigate('/login')

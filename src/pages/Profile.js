@@ -9,7 +9,7 @@ export default function Profile() {
     const [data, setData] = useState({ data:{ avatar:{url:''} }, posts:[] }) 
 
     useEffect(() => {
-        axios.post('http://localhost:8000/getprofile', {
+        axios.post('https://safe-stray-life.herokuapp.com/getprofile', {
             token: localStorage.getItem('token')
         })
             .then(res => { 

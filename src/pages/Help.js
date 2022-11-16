@@ -79,7 +79,7 @@ export default function Help() {
 
     const openPost = (id) =>{
         console.log('clicked')
-        axios.post(`http://localhost:8000/post/${id}`,{token: localStorage.getItem('token')})
+        axios.post(`https://safe-stray-life.herokuapp.com/post/${id}`,{token: localStorage.getItem('token')})
         .then(res => navigate('/post', {state:{data:res.data.post, user:''}}))
         .catch(err => console.log(err))
     }

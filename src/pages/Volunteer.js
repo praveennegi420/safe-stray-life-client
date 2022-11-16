@@ -37,7 +37,7 @@ export default function Volunteer() {
 
     const openPost = (id) =>{
         console.log('clicked')
-        axios.post(`http://localhost:8000/volunteer/${id}`,{token: localStorage.getItem('token')})
+        axios.post(`https://safe-stray-life.herokuapp.com/volunteer/${id}`,{token: localStorage.getItem('token')})
         .then(res => navigate('/person', {state:{data:res.data.post, user:''}}))
         .catch(err => console.log(err))
     }

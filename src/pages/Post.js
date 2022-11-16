@@ -8,7 +8,7 @@ export default function Post(){
     const location= useLocation()
 
     function verifyPost(id){
-        axios.post('http://localhost:8000/verifypost',{id})
+        axios.post('https://safe-stray-life.herokuapp.com/verifypost',{id})
         .then(res => navigate('/profile'))
         .catch(err => console.log(err))
     }
