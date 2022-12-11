@@ -13,7 +13,7 @@ export default function Help() {
 
     const fetchData = async () => {
         try {
-            const data = await axios.get('https://safe-stray-life.herokuapp.com/help', {
+            const data = await axios.get('https://safestraylife.azurewebsites.net/help', {
                 params: {
                     page
                 }
@@ -49,7 +49,7 @@ export default function Help() {
         fileReader.onload= () => {
             const fileURL= fileReader.result
             const config = { headers: { "content-type": 'application/json' } }
-            axios.post('https://safe-stray-life.herokuapp.com/help', {
+            axios.post('https://safestraylife.azurewebsites.net/help', {
                 location: data.location,
                 contact: data.contact,
                 about: data.about,
@@ -79,7 +79,7 @@ export default function Help() {
 
     const openPost = (id) =>{
         console.log('clicked')
-        axios.post(`https://safe-stray-life.herokuapp.com/post/${id}`,{token: localStorage.getItem('token')})
+        axios.post(`https://safestraylife.azurewebsites.net/post/${id}`,{token: localStorage.getItem('token')})
         .then(res => navigate('/post', {state:{data:res.data.post, user:''}}))
         .catch(err => console.log(err))
     }

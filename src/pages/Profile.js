@@ -9,7 +9,7 @@ export default function Profile() {
     const [data, setData] = useState({ data:{ avatar:{url:''} }, posts:[] }) 
 
     useEffect(() => {
-        axios.post('https://safe-stray-life.herokuapp.com/getprofile', {
+        axios.post('https://safestraylife.azurewebsites.net/getprofile', {
             token: localStorage.getItem('token')
         })
             .then(res => { 
@@ -21,7 +21,7 @@ export default function Profile() {
     }, [])
 
     const removeImage = (id) =>{
-        axios.post('https://safe-stray-life.herokuapp.com/deletepost',{ id, user: data.data._id })
+        axios.post('https://safestraylife.azurewebsites.net/deletepost',{ id, user: data.data._id })
         .then(res => window.location.reload())
         .catch(err => console.log(err))
     }
@@ -38,7 +38,7 @@ export default function Profile() {
 
     const beVolunteer= () => {
 
-        axios.post('https://safe-stray-life.herokuapp.com/be-volunteer', {volunteer: !data.data.volunteer, token: localStorage.getItem('token') }, { headers: { 'content-type' : 'application/json'} })
+        axios.post('https://safestraylife.azurewebsites.net/be-volunteer', {volunteer: !data.data.volunteer, token: localStorage.getItem('token') }, { headers: { 'content-type' : 'application/json'} })
         .then(res => { if(res.data.status==='error') alert(res.data.error) })
         .catch(err => console.log(err))
     }

@@ -18,7 +18,7 @@ export default function Contact() {
     async function login(e) {
         e.preventDefault();
 
-        axios.post('https://safe-stray-life.herokuapp.com/register', { user: data.userName, email: data.email, passwd: data.passwd })
+        axios.post('https://safestraylife.azurewebsites.net/register', { user: data.userName, email: data.email, passwd: data.passwd })
             .then(res => {
                 if (res.data.status === 'error') alert(res.data.error)
                 else navigate('/login')
