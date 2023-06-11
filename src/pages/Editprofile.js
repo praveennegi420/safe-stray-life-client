@@ -28,7 +28,7 @@ export default function Editprofile() {
         fileReader.onload = () => {
             const fileURL = fileReader.result
             const config = { headers: { "content-type": 'application/json' }, }
-            axios.post('https://safestraylife.azurewebsites.net/edit-profile', {
+            axios.post('https://safe-stray-life-server.vercel.app/edit-profile', {
                 name: data.name,
                 email: data.email,
                 address: data.address,

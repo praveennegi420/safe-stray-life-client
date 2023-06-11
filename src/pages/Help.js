@@ -13,7 +13,7 @@ export default function Help() {
 
     const fetchData = async () => {
         try {
-            const data = await axios.get('https://safestraylife.azurewebsites.net/help', {
+            const data = await axios.get('https://safe-stray-life-server.vercel.app/help', {
                 params: {
                     page
                 }
@@ -49,7 +49,7 @@ export default function Help() {
         fileReader.onload= () => {
             const fileURL= fileReader.result
             const config = { headers: { "content-type": 'application/json' } }
-            axios.post('https://safestraylife.azurewebsites.net/help', {
+            axios.post('https://safe-stray-life-server.vercel.app/help', {
                 location: data.location,
                 contact: data.contact,
                 about: data.about,
@@ -79,7 +79,7 @@ export default function Help() {
 
     const openPost = (id) =>{
         console.log('clicked')
-        axios.post(`https://safestraylife.azurewebsites.net/post/${id}`,{token: localStorage.getItem('token')})
+        axios.post(`https://safe-stray-life-server.vercel.app/post/${id}`,{token: localStorage.getItem('token')})
         .then(res => navigate('/post', {state:{data:res.data.post, user:''}}))
         .catch(err => console.log(err))
     }
@@ -102,8 +102,8 @@ export default function Help() {
             </div>
 
             <div className="page-change" >
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLuuHB5g-X20QfRtQkQPzaggBbnCUPu57oHOMG6LQ&s' alt='prev' onClick={prevPage} />
-                <img src='https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/next-icon.png' alt='prev' onClick={nextPage} />
+                <img src='https://th.bing.com/th/id/R.39b629a48026949dcb32ee0fec57ca98?rik=XYX2DzDurfBM%2fw&riu=http%3a%2f%2fcliparts.co%2fcliparts%2fgTe%2fEqL%2fgTeEqL6Kc.png&ehk=av58BqIzGDjnfPc4%2fmV347Kqn0c%2fn8OIjDPj46%2br%2bSU%3d&risl=&pid=ImgRaw&r=0' alt='prev' onClick={prevPage} />
+                <img src='https://pluspng.com/img-png/next-button-png-open-pluspng-com-next-button-png-2000.png' alt='prev' onClick={nextPage} />
             </div>
 
             <div className="help-end">

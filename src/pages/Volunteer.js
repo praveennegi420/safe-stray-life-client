@@ -11,7 +11,7 @@ export default function Volunteer() {
 
     const fetchData = async () => {
         try {
-            const data = await axios.get('https://safestraylife.azurewebsites.net/volunteer', {
+            const data = await axios.get('https://safe-stray-life-server.vercel.app/volunteer', {
                 params: { page }
             });
             return data.data;
@@ -37,7 +37,7 @@ export default function Volunteer() {
 
     const openPost = (id) =>{
         console.log('clicked')
-        axios.post(`https://safestraylife.azurewebsites.net/volunteer/${id}`,{token: localStorage.getItem('token')})
+        axios.post(`https://safe-stray-life-server.vercel.app/volunteer/${id}`,{token: localStorage.getItem('token')})
         .then(res => navigate('/person', {state:{data:res.data.post, user:''}}))
         .catch(err => console.log(err))
     }
@@ -58,8 +58,8 @@ export default function Volunteer() {
             </div>
 
             <div className="page-change" >
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLuuHB5g-X20QfRtQkQPzaggBbnCUPu57oHOMG6LQ&s' alt='prev' onClick={prevPage} />
-                <img src='https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/next-icon.png' alt='prev' onClick={nextPage} />
+                <img src='https://th.bing.com/th/id/R.39b629a48026949dcb32ee0fec57ca98?rik=XYX2DzDurfBM%2fw&riu=http%3a%2f%2fcliparts.co%2fcliparts%2fgTe%2fEqL%2fgTeEqL6Kc.png&ehk=av58BqIzGDjnfPc4%2fmV347Kqn0c%2fn8OIjDPj46%2br%2bSU%3d&risl=&pid=ImgRaw&r=0' alt='prev' onClick={prevPage} />
+                <img src='https://pluspng.com/img-png/next-button-png-open-pluspng-com-next-button-png-2000.png' alt='prev' onClick={nextPage} />
             </div>
 
             <div className="help-end">

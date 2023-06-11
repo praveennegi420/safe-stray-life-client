@@ -9,7 +9,7 @@ export default function Person(){
 
     console.log(location.state.data)
     function verifyPost(id){
-        axios.post('https://safestraylife.azurewebsites.net/verifypost',{id})
+        axios.post('https://safe-stray-life-server.vercel.app/verifypost',{id})
         .then(res => navigate('/profile'))
         .catch(err => console.log(err))
     }

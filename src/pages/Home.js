@@ -22,7 +22,7 @@ If possible, restrain the animal. Create a barrier or use a carrier, leash, piec
 
 When moving toward the animal, speak calmly to reassure them. Make sure they can see you at all times as you approach, and perhaps entice them to come to you by offering strong-smelling food such as canned tuna or dried liver.</p>
                 </div>
-                <img src='https://saveastray.in/assets/home-about.jpg 'alt=''/>
+                <img src='https://1721181113.rsc.cdn77.org/data/images/full/26936/stray-dogs.jpg'alt=''/>
                 </div>
                 <div className='guide g3'>
                 <img src='https://cdn.pixabay.com/photo/2016/10/31/14/55/rottweiler-1785760_960_720.jpg ' alt=''/>

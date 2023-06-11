@@ -20,7 +20,7 @@ export default function Login(){
     async function login(e){
         e.preventDefault();
     
-        axios.post('https://safestraylife.azurewebsites.net/login',{ user: data.userName, passwd: data.passwd }) 
+        axios.post('https://safe-stray-life-server.vercel.app/login',{ user: data.userName, passwd: data.passwd }) 
         .then(res => {
             
             if(res.data.status!=='ok') alert(res.data.error)
